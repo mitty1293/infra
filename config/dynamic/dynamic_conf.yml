@@ -1,0 +1,14 @@
+# Dynamic Configuration
+http:
+  routers:
+    dashboard:
+      rule: Host(`reverse-proxy-dashboard.fmitty.net`)
+      tls:
+        certResolver: myresolver
+      service: api@internal
+      middlewares:
+        - auth
+  middlewares:
+    auth:
+      basicAuth:
+        usersFile: /etc/traefic/.htpasswd

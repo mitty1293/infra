@@ -99,7 +99,7 @@ log:
 #
 # Optional
 #
-# api:
+api:
   # Enable the API in insecure mode
   #
   # Optional
@@ -112,7 +112,7 @@ log:
   # Optional
   # Default: true
   #
-#  dashboard: false
+ dashboard: true
 
 ################################################################
 # Ping configuration
@@ -155,6 +155,8 @@ providers:
     #
     exposedByDefault: false
     network: traefik_reverse_proxy_network
+  file:
+    directory: /etc/traefik/dynamic
 
 ################################################################
 # Automatic HTTPS configuration
