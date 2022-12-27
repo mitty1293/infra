@@ -2,7 +2,7 @@
 http:
   routers:
     dashboard:
-      rule: Host(`reverse-proxy-dashboard.fmitty.net`)
+      rule: "Host(`reverse-proxy-dashboard.fmitty.net`)"
       tls:
         certResolver: myresolver
       service: api@internal

@@ -23,7 +23,7 @@ global:
 #
 entryPoints:
   web:
-    address: :80
+    address: ":80"
     http:
       redirections:
         entryPoint:
@@ -31,7 +31,7 @@ entryPoints:
           scheme: https
 
   websecure:
-    address: :443
+    address: ":443"
 
 ################################################################
 # Traefik logs configuration
@@ -112,7 +112,7 @@ api:
   # Optional
   # Default: true
   #
- dashboard: true
+  dashboard: true
 
 ################################################################
 # Ping configuration
@@ -168,4 +168,4 @@ certificatesResolvers:
       email: your-email@example.com
       storage: letsencrypt/acme.json
       tlsChallenge: {}
-      caServer: https://acme-v02.api.letsencrypt.org/directory
+      # caServer: https://acme-v02.api.letsencrypt.org/directory
