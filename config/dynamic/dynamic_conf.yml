@@ -2,7 +2,7 @@
 http:
   routers:
     dashboard:
-      rule: "Host(`reverse-proxy-dashboard.fmitty.net`)"
+      rule: Host(`reverse-proxy-dashboard.fmitty.net`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))
       tls:
         certResolver: myresolver
       service: api@internal
@@ -11,4 +11,4 @@ http:
   middlewares:
     auth:
       basicAuth:
-        usersFile: /etc/traefic/.htpasswd
+        usersFile: /etc/traefik/.htpasswd

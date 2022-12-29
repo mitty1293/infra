@@ -5,7 +5,7 @@ services:
     restart: always
     ports:
       # HTTP port
-      # - "80:80"
+      # - "80:80" <- 開けても開けなくても同じだった
       # HTTPS port
       - "443:443"
       # traefik Web UI port

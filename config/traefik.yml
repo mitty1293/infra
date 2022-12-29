@@ -166,6 +166,6 @@ certificatesResolvers:
   myresolver:
     acme:
       email: your-email@example.com
-      storage: letsencrypt/acme.json
+      storage: /letsencrypt/acme.json
       tlsChallenge: {}
-      # caServer: https://acme-v02.api.letsencrypt.org/directory
+      # caServer: https://acme-staging-v02.api.letsencrypt.org/directory

@@ -4,7 +4,7 @@ reverse proxy for my web app integration
 ```
 docker network create traefik_reverse_proxy_network
 docker compose up -d
-echo $(htpasswd -nb username password) > .config/.htpasswd
+echo $(htpasswd -nb username password) > ./config/.htpasswd
 ```
 ## Dashboard
-Access to `https://reverse-proxy-dashboard.fmitty.net`
+Access to `https://reverse-proxy-dashboard.fmitty.net/dashboard/`
