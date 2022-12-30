@@ -7,4 +7,4 @@ docker compose up -d
 echo $(htpasswd -nb username password) > ./config/.htpasswd
 ```
 ## Dashboard
-Access to `https://reverse-proxy-dashboard.fmitty.net/dashboard/`
+Access to `https://fmitty.net/dashboard/`
