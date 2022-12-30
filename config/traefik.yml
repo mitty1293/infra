@@ -155,8 +155,6 @@ providers:
     #
     exposedByDefault: false
     network: traefik_reverse_proxy_network
-  file:
-    directory: /etc/traefik/dynamic
 
 ################################################################
 # Automatic HTTPS configuration
