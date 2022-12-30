@@ -7,4 +7,8 @@ docker compose up -d
 echo $(htpasswd -nb username password) > ./config/.htpasswd
 ```
 ## Dashboard
-Access to `https://fmitty.net/dashboard/`
+Access to `https://fmitty.net/dashboard/`.
+Enter the username and password you set up in `config/.htpasswd`
+## Configuration File
+* Static Configuration: `config/traefik.yml`
+* Dynamic Configuration: `config/dynamic/dynamic_conf.yml`
