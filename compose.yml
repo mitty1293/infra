@@ -16,6 +16,8 @@ services:
       - ./letsencrypt/:/letsencrypt/
     networks:
       - traefik_reverse_proxy_network
+    environment:
+      - TZ=Asia/Tokyo
     labels:
       - traefik.enable=true
       - traefik.http.routers.dashboard.rule=Host(`${HOSTNAME}`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))

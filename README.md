@@ -1,18 +1,33 @@
 # my_reverse_proxy
 reverse proxy for my web app integration
 ## Deploy
-### Replace the value of HOSTNAME with the hostname of your dashboard
-```
-cp .env_example .env
-vi .env
-# Replace the value of HOSTNAME
-```
-### Start container
-```
-docker network create traefik_reverse_proxy_network
-docker compose up -d
-echo $(htpasswd -nb username password) > ./config/.htpasswd
-```
+1. Replace the value of HOSTNAME with the hostname of your dashboard.
+    ```
+    # Copy .env_example as .env
+    cp .env_example .env
+    vi .env
+    ```
+    ```
+    # Replace the value of HOSTNAME in .env
+    HOSTNAME=example.com
+    ```
+2. Replace the email address used for registration in `config/traefik.yml`.
+    ```
+    # config/traefik.yml
+    certificatesResolvers:
+        myresolver:
+            acme:
+                email: your-email@example.com
+    ```
+2. To add basic authentication to the dashboard, prepare a file containing the user name and password
+    ```
+    echo $(htpasswd -nb username password) > ./config/.htpasswd
+    ```
+3. Start container
+    ```
+    docker network create traefik_reverse_proxy_network
+    docker compose up -d
+    ```
 ## Dashboard
 Access to `https://<HOSTNAME>/dashboard/`.  
 Enter the username and password you set up in `config/.htpasswd`
