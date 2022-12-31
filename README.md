@@ -19,11 +19,11 @@ reverse proxy for my web app integration
             acme:
                 email: your-email@example.com
     ```
-2. To add basic authentication to the dashboard, prepare a file containing the user name and password
+3. To add basic authentication to the dashboard, prepare a file(`/config/.htpasswd`) containing the user name and password.
     ```
     echo $(htpasswd -nb username password) > ./config/.htpasswd
     ```
-3. Start container
+4. Start container.
     ```
     docker network create traefik_reverse_proxy_network
     docker compose up -d
