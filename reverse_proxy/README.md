@@ -1,15 +1,15 @@
 # reverse_proxy
 reverse proxy for my web app integration
 ## Deploy
-1. Replace the value of HOSTNAME with the hostname of your dashboard.
+1. Replace the value of DOMAIN with the domain of your dashboard.
     ```
     # Copy .env_example as .env
     cp .env_example .env
     vi .env
     ```
     ```
-    # Replace the value of HOSTNAME in .env
-    HOSTNAME=example.com
+    # Replace the value of DOMAIN in .env
+    DOMAIN=example.com
     ```
 2. Replace the email address used for registration in `config/traefik.yml`.
     ```
@@ -29,7 +29,7 @@ reverse proxy for my web app integration
     docker compose up -d
     ```
 ## Dashboard
-Access to `https://<HOSTNAME>/dashboard/`.  
+Access to `https://<DOMAIN>/dashboard/`.  
 Enter the username and password you set up in `config/.htpasswd`
 ## Configuration File
 * Static Configuration: `config/traefik.yml`

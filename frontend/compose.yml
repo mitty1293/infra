@@ -1,0 +1,18 @@
+services:
+  nginx_frontend:
+    container_name: nginx_frontend
+    image: nginx:1.23.3
+    volumes:
+      # - ./config/nginx.conf:/etc/nginx/nginx.conf
+      - ./html/:/usr/share/nginx/html/
+    networks:
+      - traefik_reverse_proxy_network
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.nginx_frontend.entrypoints=websecure
+      - traefik.http.routers.nginx_frontend.rule=Host(`${DOMAIN}`)
+      - traefik.http.routers.nginx_frontend.tls.certresolver=myresolver
+      - traefik.http.services.nginx_frontend.loadbalancer.server.port=80
+networks:
+  traefik_reverse_proxy_network:
+    external: true

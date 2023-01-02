@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway", "Aria", "Yu Gothic", sans-serif;
+}
+
+a {
+    color: #5c7a73;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #232e2b;
+    text-decoration: underline;
+}
+
+.project {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project p {
+    margin-bottom: 0.5rem;
+}
